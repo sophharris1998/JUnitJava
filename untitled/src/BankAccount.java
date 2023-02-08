@@ -33,10 +33,14 @@ public class BankAccount {
         //deposit
         //withdraw
     public void deposit (double amount) {
-        balance += amount;
+        if (amount > 0) {
+            balance += amount;
+        }
     }
 
     public void withdraw(double amount) {
-        balance -= amount;
+        if (amount > 0) {
+            balance -= amount;
+        }
     }
 }

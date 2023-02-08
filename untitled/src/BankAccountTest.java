@@ -14,7 +14,7 @@ class BankAccountTest {
     }
 
     @Test
-    void deposit() {
+    void deposit_PositiveAmount_IncreasedBalance() {
         //Act
         account.deposit(200);
         //Assert
@@ -22,8 +22,18 @@ class BankAccountTest {
     }
 
     @Test
-    void withdraw() {
+    void withdraw_PositiveAmount_DecreasedBalance() {
         account.withdraw(200);
         assertEquals(800.00, account.getBalance() );
+    }
+
+    @Test
+    void deposit_NegativeAmount_NoChange() {
+
+    }
+
+    @Test
+    void withdraw_NegativeAmount_NoChange() {
+
     }
 }
