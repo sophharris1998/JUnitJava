@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BankAccount {
     //variable
         //amount/balance
@@ -8,7 +10,7 @@ public class BankAccount {
    private double balance;
     private String name;
 
-
+    private ArrayList<Double> transaction = new ArrayList<>();
     //constructor (s)
     public BankAccount(double balance, String name){
         this.balance=balance;
@@ -34,13 +36,23 @@ public class BankAccount {
         //withdraw
     public void deposit (double amount) {
         if (amount > 0) {
-            balance += amount;
+            this.balance += amount;
+            addTransaction(amount);
         }
     }
 
     public void withdraw(double amount) {
         if (amount > 0) {
-            balance -= amount;
+            this.balance -= amount;
+            addTransaction(amount * -1);
         }
+    }
+
+    public ArrayList<Double> getTransaction() {
+        return this.transaction;
+    }
+
+    public void addTransaction(double amount) {
+        this.transaction .add(amount);
     }
 }
