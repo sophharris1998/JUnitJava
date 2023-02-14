@@ -29,11 +29,13 @@ class BankAccountTest {
 
     @Test
     void deposit_NegativeAmount_NoChange() {
-
+        account.deposit(-100.00);
+        assertEquals(1000.00, account.getBalance());
     }
 
     @Test
     void withdraw_NegativeAmount_NoChange() {
-
+        account.withdraw(-100.00);
+        assertEquals(1000.00, account.getBalance());
     }
-}
+    }
